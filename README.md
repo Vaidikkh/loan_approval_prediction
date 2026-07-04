@@ -19,21 +19,24 @@ A Machine Learning-powered web application that predicts whether a loan applicat
 ## 🖥️ Project Demo
 
 ### Home Page
-> Add a screenshot here
+
+<img width="1004" height="2763" alt="127 0 0 1_5000_" src="https://github.com/user-attachments/assets/91865dcc-b57d-4b3c-8001-1578509fdfa1" />
 
 ```
 images/home.png
 ```
 
 ### Prediction Page
-> Add a screenshot here
+> <img width="1004" height="2291" alt="127 0 0 1_5000_prediction" src="https://github.com/user-attachments/assets/3c14e5b6-3017-4c26-9070-4c8af9e8b7ad" />
+
 
 ```
 images/prediction.png
 ```
 
 ### Prediction Result
-> Add a screenshot here
+> <img width="557" height="602" alt="Screenshot 2026-07-04 224818" src="https://github.com/user-attachments/assets/2247ff59-81eb-4f52-96d6-71a01d201ad7" />
+
 
 ```
 images/result.png

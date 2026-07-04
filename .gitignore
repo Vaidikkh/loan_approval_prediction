@@ -1,0 +1,21 @@
+# Virtual Environment
+.venv/
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# Generated PDF Reports
+reports/
+
+# Environment Variables
+.env
+
+# macOS
+.DS_Store

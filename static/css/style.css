@@ -1,0 +1,271 @@
+/*=========================
+        GLOBAL
+==========================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+body{
+
+    background:#F4F7FC;
+
+    color:#1F2937;
+
+}
+
+/*=========================
+        NAVBAR
+==========================*/
+
+.navbar{
+
+    background:#1E3A8A;
+
+    padding:18px 0;
+
+}
+
+.navbar-brand{
+
+    color:white;
+
+    font-size:1.6rem;
+
+    font-weight:700;
+
+}
+
+.navbar-brand:hover{
+
+    color:white;
+
+}
+
+.nav-link{
+
+    color:white;
+
+    margin-left:20px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.nav-link:hover{
+
+    color:#FFD54F;
+
+}
+
+/*=========================
+        HERO
+==========================*/
+
+.hero{
+
+    padding:90px 0;
+
+}
+
+.hero h1{
+
+    font-size:3.3rem;
+
+    font-weight:700;
+
+}
+
+.hero p{
+
+    font-size:1.15rem;
+
+    color:#6B7280;
+
+    margin-top:20px;
+
+}
+
+.hero img{
+
+    width:90%;
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+/*=========================
+        BUTTONS
+==========================*/
+
+.btn-main{
+
+    background:#1E3A8A;
+
+    color:white;
+
+    border:none;
+
+    padding:14px 35px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.btn-main:hover{
+
+    background:#16307D;
+
+    color:white;
+
+}
+
+.btn-outline-main{
+
+    border:2px solid #1E3A8A;
+
+    color:#1E3A8A;
+
+    padding:14px 35px;
+
+    border-radius:10px;
+
+}
+
+.btn-outline-main:hover{
+
+    background:#1E3A8A;
+
+    color:white;
+
+}
+
+/*=========================
+        CARDS
+==========================*/
+
+.feature-card{
+
+    border:none;
+
+    border-radius:15px;
+
+    transition:.4s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    height:100%;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.feature-card i{
+
+    font-size:55px;
+
+    color:#1E3A8A;
+
+    margin-bottom:20px;
+
+}
+
+/*=========================
+        FOOTER
+==========================*/
+
+footer{
+
+    background:#111827;
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
+
+    margin-top:100px;
+
+}
+
+/*==========================
+      Prediction Card
+===========================*/
+
+.prediction-card{
+
+    min-height:520px;
+
+}
+
+.status-icon{
+
+    font-size:90px;
+
+}
+
+.approved{
+
+    color:#16A34A;
+
+}
+
+.rejected{
+
+    color:#DC2626;
+
+}
+
+.waiting-icon{
+
+    font-size:80px;
+
+    color:#9CA3AF;
+
+}
+
+.result-details{
+
+    font-size:17px;
+
+}
+
+.result-details p{
+
+    margin-bottom:8px;
+
+}
+

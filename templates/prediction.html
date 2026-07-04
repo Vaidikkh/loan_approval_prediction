@@ -1,0 +1,373 @@
+{% extends "base.html" %}
+
+{% block title %}Loan Prediction{% endblock %}
+
+{% block content %}
+
+<section class="container py-5">
+
+    <!-- Heading -->
+
+    <div class="text-center mb-5">
+
+        <h1 class="fw-bold">
+
+            Loan Approval Prediction
+
+        </h1>
+
+        <p class="text-muted">
+
+            Enter the applicant details and choose the machine learning model.
+
+        </p>
+
+    </div>
+
+    <div class="row g-4">
+
+        <!-- ================= LEFT CARD ================= -->
+
+        <div class="col-lg-7">
+
+            <div class="card shadow border-0 rounded-4">
+
+                <div class="card-body p-4">
+
+                    <h3 class="mb-4">
+
+                        Applicant Details
+
+                    </h3>
+
+                    <form action="{{ url_for('prediction') }}" method="POST">
+
+                        <!-- Model -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Prediction Model
+
+                            </label>
+
+                            <select class="form-select" name="model" required>
+
+                                <option value="svm">
+
+                                    Support Vector Machine
+
+                                </option>
+
+                                <option value="logistic">
+
+                                    Logistic Regression
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <!-- Income -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Annual Income
+
+                            </label>
+
+                            <input
+                                type="number"
+                                class="form-control"
+                                name="income"
+                                min="30053"
+                                max="149964"
+                                placeholder="Enter Annual Income"
+                                required>
+
+                        </div>
+
+                        <!-- Credit Score -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Credit Score
+
+                            </label>
+
+                            <input
+                                type="number"
+                                class="form-control"
+                                name="credit_score"
+                                placeholder="Enter Credit Score"
+                                required>
+
+                        </div>
+
+                        <!-- Loan Amount -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Loan Amount
+
+                            </label>
+
+                            <input
+                                type="number"
+                                class="form-control"
+                                name="loan_amount"
+                                min="1022"
+                                max="49999"
+                                placeholder="Enter Loan Amount"
+                                required>
+
+                        </div>
+
+                        <!-- Points -->
+
+                        <div class="mb-4">
+
+                            <label class="form-label">
+
+                                Credit Points
+
+                            </label>
+
+                            <input
+                                type="number"
+                                class="form-control"
+                                name="points"
+                                placeholder="Enter Credit Points"
+                                required>
+
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary w-100">
+
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+
+                            Predict Loan
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+       
+
+<!-- ================= RIGHT CARD ================= -->
+
+<div class="col-lg-5">
+
+    <div class="card shadow-lg border-0 rounded-4 prediction-card">
+
+        <div class="card-body p-4">
+
+            <h3 class="text-center mb-4">
+
+                Prediction Result
+
+            </h3>
+
+            {% if prediction %}
+
+            <div class="text-center">
+
+                {% if "Approved" in prediction %}
+
+                <div class="status-icon approved">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                </div>
+
+                {% else %}
+
+                <div class="status-icon rejected">
+
+                    <i class="fa-solid fa-circle-xmark"></i>
+
+                </div>
+
+                {% endif %}
+
+                <h2 class="mt-3">
+
+                    {{ prediction }}
+
+                </h2>
+
+            </div>
+
+            <hr>
+
+<div class="result-details">
+
+    <h5 class="mb-3">
+
+        Prediction Summary
+
+    </h5>
+
+    <table class="table">
+
+        <tr>
+
+            <th>Model</th>
+
+            <td>{{ model }}</td>
+
+        </tr>
+
+        <tr>
+
+            <th>Income</th>
+
+            <td>₹ {{ prediction_data.income }}</td>
+
+        </tr>
+
+        <tr>
+
+            <th>Credit Score</th>
+
+            <td>{{ prediction_data.credit_score }}</td>
+
+        </tr>
+
+        <tr>
+
+            <th>Loan Amount</th>
+
+            <td>₹ {{ prediction_data.loan_amount }}</td>
+
+        </tr>
+
+        <tr>
+
+            <th>Credit Points</th>
+
+            <td>{{ prediction_data.points }}</td>
+
+        </tr>
+
+    </table>
+
+    <hr>
+
+    {% if "Approved" in prediction %}
+
+    <p class="text-success">
+
+        <strong>Recommendation:</strong><br>
+
+        The applicant has a high probability of loan approval.
+
+    </p>
+
+    {% else %}
+
+    <p class="text-danger">
+
+        <strong>Recommendation:</strong><br>
+
+        Consider improving your credit profile before applying.
+
+    </p>
+
+    {% endif %}
+
+</div>
+                {% if "Approved" in prediction %}
+
+                <p class="text-success">
+
+                    The applicant satisfies the model requirements and has a
+                    high probability of loan approval.
+
+                </p>
+
+                {% else %}
+
+                <p class="text-danger">
+
+                    The application may not meet the approval criteria.
+                    Consider improving financial indicators before applying.
+
+                </p>
+
+                {% endif %}
+
+            </div>
+
+           <a href="{{ url_for('download_pdf') }}"
+                class="btn btn-success w-100 mt-4">
+
+                    <i class="fa-solid fa-file-pdf"></i>
+
+                    Download Report
+
+            </a>
+
+            {% else %}
+
+            <div class="text-center">
+
+                <i class="fa-solid fa-file-circle-question waiting-icon"></i>
+
+                <h4 class="mt-3">
+
+                    Waiting for Prediction
+
+                </h4>
+
+                <p class="text-muted">
+
+                    Fill the form and click
+
+                    <strong>Predict Loan</strong>
+
+                    to see the prediction.
+
+                </p>
+
+            </div>
+
+            <a
+
+            class="btn btn-success w-100 mt-4 disabled">
+
+            <i class="fa-solid fa-file-pdf"></i>
+
+            Download Report
+
+            </a>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+</section>
+
+{% endblock %}

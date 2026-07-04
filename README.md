@@ -198,6 +198,12 @@ The machine learning model predicts based on the training dataset and should **n
 
 ---
 
+## Images 
+
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+
 ## 🚀 Future Improvements
 
 - User Authentication
@@ -219,6 +225,8 @@ B.Tech CSE (Artificial Intelligence)
 GitHub: https://github.com/Vaidikkh
 
 ---
+
+
 
 ## ⭐ Support
 
